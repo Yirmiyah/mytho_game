@@ -46,4 +46,7 @@ func main() {
 
 func Game(w http.ResponseWriter, r *http.Request) {
 
+	database.GeneratePlayers()
+	fmt.Printf("database.GetPlayers(): %v\n", database.GetPlayers())
+
 }

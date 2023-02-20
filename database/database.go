@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+
+	_ "github.com/mattn/go-sqlite3"
 )
 
 var Db *sql.DB
@@ -18,17 +20,17 @@ func CreateDataBase() {
 
 	_, err = Db.Exec(`CREATE TABLE IF NOT EXISTS players
         (id INTEGER PRIMARY KEY AUTOINCREMENT,
-		team1 TEXT DEFAULT '',
-		team2 TEXT DEFAULT '',
-        player1 TEXT DEFAULT '',
-		player2 TEXT DEFAULT '',
-		player2 TEXT DEFAULT '',
-		player4 TEXT DEFAULT '',
-		player5 TEXT DEFAULT '',
-		player6 TEXT DEFAULT '',
+		team1 TEXT DEFAULT 'team1',
+		team2 TEXT DEFAULT 'team2',
+        player1 TEXT DEFAULT 'player1',
+		player2 TEXT DEFAULT 'player2',
+		player3 TEXT DEFAULT 'player3',
+		player4 TEXT DEFAULT 'player4',
+		player5 TEXT DEFAULT 'player5',
+		player6 TEXT DEFAULT 'player6',
 		coinTeam1 INTEGER DEFAULT 15,
 		coinTeam2 INTEGER DEFAULT 15,
-        masterName TEXT DEFAULT '',
+        masterName TEXT DEFAULT 'masterOfTheGame',
         nbManche INTEGER DEFAULT 0
         )`)
 	if err != nil {
@@ -50,32 +52,7 @@ func CreateDataBase() {
 
 func GeneratePlayers() {
 
-	_, err := Db.Exec("INSERT INTO players (player1) VALUES ? ", GenerateRandomName())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	_, err = Db.Exec("INSERT INTO players (player2) VALUES ? ", GenerateRandomName())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	_, err = Db.Exec("INSERT INTO players (player3) VALUES ? ", GenerateRandomName())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	_, err = Db.Exec("INSERT INTO players (player4) VALUES ? ", GenerateRandomName())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	_, err = Db.Exec("INSERT INTO players (player5) VALUES ? ", GenerateRandomName())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	_, err = Db.Exec("INSERT INTO players (player6) VALUES ? ", GenerateRandomName())
+	_, err := Db.Exec("INSERT INTO players (player1,player2,player3,player4,player5,player6) VALUES (?,?,?,?,?,?) ", GenerateRandomName(), GenerateRandomName(), GenerateRandomName(), GenerateRandomName(), GenerateRandomName(), GenerateRandomName())
 	if err != nil {
 		log.Fatal(err)
 	}
