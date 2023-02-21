@@ -56,7 +56,6 @@ func GeneratePlayers() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 }
 
 func GetPlayers() map[string]string {
