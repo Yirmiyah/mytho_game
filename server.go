@@ -33,7 +33,7 @@ func main() {
 
 	database.CreateDataBase()
 	defer database.Db.Close()
-	fileServer := http.FileServer(http.Dir("./templates"))
+	fileServer := http.FileServer(http.Dir("./nui"))
 
 	http.Handle("/", fileServer)
 	http.HandleFunc("/game", Game)
@@ -45,5 +45,12 @@ func main() {
 }
 
 func Game(w http.ResponseWriter, r *http.Request) {
+
+	database.GeneratePlayers()
+	fmt.Printf("database.GetPlayers(): %v\n", database.GetPlayers())
+
+	/*var t *template.Template
+	t = template.Must(t.ParseFiles("./nui/game.html"))
+	t.ExecuteTemplate(w, "game",)*/
 
 }
