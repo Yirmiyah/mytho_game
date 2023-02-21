@@ -99,23 +99,15 @@ html, body {
 
 
 body {
-	position: relative;
-	margin: 0;
-	background: url("../../../data/fond-ecran-noir-blanc.gif") repeat-x;
-	line-height: 1.6;
-	font-size: 19px;
-	font-weight: normal;
-	-webkit-font-smoothing: antialiased;
-	color: #FFF;
-	overflow-x: hidden;
+	background: #0a0a0a;
 }
 
 .sub {
 	width: 55%;
 	height: 55%;
 	position: relative;
-	top: -370px;
-	left: -270px;
+	top: -100px;
+	left: -100px;
 	transition: transform .1s;
 }
 
@@ -123,15 +115,6 @@ body {
 -ms-transform: scale(1.1); /* IE 9 */
 -webkit-transform: scale(1.1); /* Safari 3-8 */
 transform: scale(1.1);
-}
-
-.girl {
-	z-index: 1;
-	position: relative;
-	top: 52px;
-	left: 300px;
-	width : 35%;
-	height : 35%;
 }
 
 p { 

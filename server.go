@@ -33,7 +33,11 @@ func main() {
 
 	database.CreateDataBase()
 	defer database.Db.Close()
+<<<<<<< HEAD
 	http.Handle("/nui/", http.StripPrefix("/nui/", http.FileServer(http.Dir("./nui"))))
+=======
+	fileServer := http.FileServer(http.Dir("./nui"))
+>>>>>>> max
 
 	http.HandleFunc("/", Game)
 	http.HandleFunc("/error", erreur)

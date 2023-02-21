@@ -267,7 +267,7 @@ body.tt-np-image-on.tt-next-project-top:not(.tt-light-bg-on):not(.is-mobile):not
 }
 .tt-ol-menu-ghost {
 	color: var(--tt-ghost-color);
-	opacity: 0.8;
+	opacity: 0.03;
 }
 
 .tt-ol-menu-list > li > a, 
