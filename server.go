@@ -35,12 +35,22 @@ func main() {
 	defer database.Db.Close()
 	http.Handle("/nui/", http.StripPrefix("/nui/", http.FileServer(http.Dir("./nui"))))
 
-	http.HandleFunc("/", Game)
+	http.HandleFunc("/", Home)
+	http.HandleFunc("/salon", Salon)
+	http.HandleFunc("/game", Game)
 	http.HandleFunc("/error", erreur)
 	fmt.Printf("Starting server at port:8080\n")
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal(err)
 	}
+}
+
+func Home(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func Salon(w http.ResponseWriter, r *http.Request) {
+
 }
 
 func Game(w http.ResponseWriter, r *http.Request) {
