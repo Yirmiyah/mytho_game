@@ -15,7 +15,7 @@ func erreur(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Handling 500 errors
-	_, err := template.ParseFiles("templates/index.html")
+	_, err := template.ParseFiles("./nui/index.html")
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte("500: Internal Server Error"))
@@ -33,7 +33,7 @@ func main() {
 
 	database.CreateDataBase()
 	defer database.Db.Close()
-	fileServer := http.FileServer(http.Dir("./templates"))
+	fileServer := http.FileServer(http.Dir("./nui"))
 
 	http.Handle("/", fileServer)
 	http.HandleFunc("/game", Game)
