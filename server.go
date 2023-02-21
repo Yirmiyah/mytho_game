@@ -33,10 +33,9 @@ func main() {
 
 	database.CreateDataBase()
 	defer database.Db.Close()
-	fileServer := http.FileServer(http.Dir("./nui"))
+	http.Handle("/nui/", http.StripPrefix("/nui/", http.FileServer(http.Dir("./nui"))))
 
-	http.Handle("/", fileServer)
-	http.HandleFunc("/game", Game)
+	http.HandleFunc("/", Game)
 	http.HandleFunc("/error", erreur)
 	fmt.Printf("Starting server at port:8080\n")
 	if err := http.ListenAndServe(":8080", nil); err != nil {
@@ -45,5 +44,15 @@ func main() {
 }
 
 func Game(w http.ResponseWriter, r *http.Request) {
+
+	database.GeneratePlayers()
+	fmt.Printf("database.GetPlayers(): %v\n", database.GetPlayers())
+
+	t := template.New("game")
+	t = template.Must(t.ParseFiles("nui/game.html"))
+	err := t.ExecuteTemplate(w, "game", nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 }
