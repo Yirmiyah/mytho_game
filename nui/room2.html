@@ -1,3 +1,4 @@
+{{define "room2"}}
 <!DOCTYPE html>
 
 <html lang="en">
@@ -53,25 +54,24 @@
 	-->
 
 <body id="body" class="tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor">
-	<a href="/game"><img class="sub" src="../data/bouton.png"></a>
+	
 
-	<form method="post">
+	<form action="/manches" method="post">
 		<div class="selection">
 			<h1 class="title_team1">TEAM 2</h1>
 			<div class="name_team1">
-				<input type="text" name="name_team1" id="" placeholder="Nom Team 1">
+				<input type="text" name="name_team1" id="" placeholder="Nom Team 1" required>
 			</div>
-
 			<div class="avatar">
 				
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
+				<input type="radio" name="position" value="avatar_1" />
+				<input type="radio" name="position" value="avatar_2"  />
+				<input type="radio" name="position" value="avatar_3"  />
+				<input type="radio" name="position" value="avatar_4"  />
+				<input type="radio" name="position" value="avatar_5"  />
+				<input type="radio" name="position" value="avatar_6"  />
+				<input type="radio" name="position" value="avatar_7"  />
+				<input type="radio" name="position" value="avatar_8"  />
 
 				<main id="carousel">
 					<div class="item"></div>
@@ -87,7 +87,7 @@
 
 			<!-- <button type="submit" id="btn-submit">Valider</button> -->
 
-			<button id="btn" type="submit">
+			<!-- <button id="btn" type="submit">
 				<p id="btnText">Valider</p>
 				<div class="check-box">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -104,7 +104,8 @@
 					btnText.innerHTML = "Thanks";
 					btn.classList.add("active");
 				};
-			</script>
+			</script> -->
+			<button type="submit"><img class="sub" src="../data/bouton.png"></button>
 		</div>
 
 	</form>
@@ -367,3 +368,4 @@
 </body>
 
 </html>
+{{end}}
