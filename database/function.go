@@ -15,6 +15,8 @@ import (
 
 const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+var quizz structure.Quizz
+
 func RandStringBytes(n int) string {
 	b := make([]byte, n)
 	for i := range b {
@@ -34,8 +36,6 @@ func GenerateRandomName() string {
 }
 
 func CreateJsonQuizz() {
-
-	var quizz structure.Quizz
 
 	f, err := excelize.OpenFile("database/Questions_Reponses_SEO.xlsx")
 	if err != nil {
@@ -63,5 +63,11 @@ func CreateJsonQuizz() {
 }
 
 func PickQuestion() {
+
+	number := rand.Intn(93)
+	fmt.Printf("number: %v\n", number)
+	fmt.Printf("quizz.Question: %v\n", quizz.Question[number])
+	fmt.Printf("quizz.Response: %v\n", quizz.Response[number])
+	fmt.Printf("quizz.Level: %v\n", quizz.Level[number])
 
 }

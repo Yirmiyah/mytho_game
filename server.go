@@ -163,6 +163,8 @@ func Manche(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	database.PickQuestion()
+
 	t.ExecuteTemplate(w, "manche", nil)
 
 }
