@@ -47,7 +47,6 @@ func CreateDataBase() {
 		log.Fatal("erreur creation de table players")
 		log.Fatal(err)
 	}
-
 }
 
 func GeneratePlayers() {
