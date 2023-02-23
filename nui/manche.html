@@ -38,7 +38,7 @@
 
 	<!-- Template master CSS -->
 	<link rel="stylesheet" href="assets/css/helper.css">
-	<link id="tt-themecss" rel="stylesheet" href="assets/css/theme2.css">
+	<link id="tt-themecss" rel="stylesheet" href="assets/css/manches.css">
 
 </head>
 
@@ -58,26 +58,14 @@
 
 	<form method="post">
 		<div class="selection">
-			<h1 class="title_team1">TEAM 1</h1>
-			<div class="name_team1">
-				<input type="text" name="name_team1" id="" placeholder="Nom Team 1">
-			</div>
+			<h1 class="title_team1">MANCHES</h1>
 
 			<div class="avatar">
+				<input type="radio" name="position" checked />
 				<input type="radio" name="position" />
 				<input type="radio" name="position" />
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
-				<input type="radio" name="position" />
+			
 				<main id="carousel">
-					<div class="item"></div>
-					<div class="item"></div>
-					<div class="item"></div>
-					<div class="item"></div>
-					<div class="item"></div>
 					<div class="item"></div>
 					<div class="item"></div>
 					<div class="item"></div>
@@ -106,10 +94,11 @@
 					btn.classList.add("active");
 				};
 			</script> -->
-            <button type="submit"><img class="sub" src="../data/bouton.png"></button>
+           <div class="selected-btn">
+			<a href="/room2"><img class="sub" src="data/retour.PNG"></a>
+			<button type="submit"><img class="sub" src="data/play.PNG"></button>
+		   </div>
 		</div>
-		
-
 	</form>
 
 

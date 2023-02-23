@@ -107,6 +107,7 @@ func Room2(w http.ResponseWriter, r *http.Request) {
 	team1 = structure.Team1{
 		Name:   nameTeam1,
 		Avatar: "./nui/data/" + choixAvatarTeam1,
+		Score:  15,
 	}
 
 	jsonData, err := json.Marshal(team1)
@@ -149,6 +150,7 @@ func Manche(w http.ResponseWriter, r *http.Request) {
 	team2 = structure.Team2{
 		Name:   nameTeam2,
 		Avatar: "./nui/data/" + choixAvatarTeam2,
+		Jeton:  15,
 	}
 
 	jsonData, err := json.Marshal(team2)
@@ -166,5 +168,21 @@ func Manche(w http.ResponseWriter, r *http.Request) {
 	database.PickQuestion()
 
 	t.ExecuteTemplate(w, "manche", nil)
+
+}
+
+func Game(w http.ResponseWriter, r *http.Request) {
+	if err := r.ParseForm(); err != nil {
+		fmt.Fprintf(w, "ParseForm() err: %v", err)
+		return
+	}
+
+	t, err := template.ParseFiles("nui/manche.html", "nui/assets/css/theme2.css")
+	if err != nil {
+		log.Println("Error parsing template:", err)
+		return
+	}
+
+	t.ExecuteTemplate(w, "game", nil)
 
 }

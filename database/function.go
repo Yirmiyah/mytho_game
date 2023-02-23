@@ -32,7 +32,6 @@ func GenerateRandomName() string {
 	randomString := RandStringBytes(lengthString)
 
 	return randomString
-
 }
 
 func CreateJsonQuizz() {
@@ -64,10 +63,10 @@ func CreateJsonQuizz() {
 
 func PickQuestion() {
 
+	rand.Seed(time.Now().UnixNano())
 	number := rand.Intn(93)
 	fmt.Printf("number: %v\n", number)
 	fmt.Printf("quizz.Question: %v\n", quizz.Question[number])
 	fmt.Printf("quizz.Response: %v\n", quizz.Response[number])
 	fmt.Printf("quizz.Level: %v\n", quizz.Level[number])
-
 }
