@@ -37,8 +37,13 @@ var card = document.querySelector('.card');
 /* Shuffle card*/
 let manche1 = false;
 
+const cardList = document.getElementsByClassName("card-list")[0];
+const shuffle = document.getElementsByClassName("btn-shuffle")[0];
+const reset = document.getElementsByClassName("btn-reset")[0];
 
+const card2List = document.getElementsByClassName("card2-list")[0];
 
+// equipe 1 shuffle ane take card to wirte answer...
 
 reset.disabled = true;
 
