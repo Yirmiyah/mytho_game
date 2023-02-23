@@ -70,16 +70,13 @@
     <img src="{{.Team2.Avatar}}" class="avatar-team2" alt=""> 
 
     <div class="card-wrapper">
+      <p class="style-question"></p>
       <ul class="card-list">
         <li class="card-list__item" data-card="0">
-          <div class="card">
-
-          </div>
+          <div class="card"></div>
         </li>
         <li class="card-list__item" data-card="1">
-          <div class="card">
-            <p class="style-question"></p>
-          </div>
+          <div class="card"></div>
         </li>
         <li class="card-list__item" data-card="2">
           <div class="card"></div>
@@ -91,7 +88,7 @@
       </div>
     </div>
 
-   <img class="frontcard" id="image">
+  <img class="frontcard" id="image">
   
 
 
@@ -119,10 +116,10 @@
 
     <div class="vertical-line"></div>
 
-    <a class="score1">Score Equipe 1 : 15</a>
+    <a class="score1">Score Equipe 1 : {{.Team1.Jeton}}</a>
     <a href=""><img class="token1" src="./data/coin.png"></a>
     <br>
-    <a class="score2">Score Equipe 2 : 15</a>
+    <a class="score2">Score Equipe 2 : {{.Team2.Jeton}}</a>
     <a href=""><img class="token2" src="./data/coin.png"></a>
   </div>
 

@@ -107,9 +107,8 @@ function PickQRL(){
     // const R = `${Reponses}`;
     // document.getElementById("Question").innerHTML = Q;
     // document.getElementById("Reponse").innerHTML = R;
-    document.querySelector(".front").innerHTML = `${Questions[numberRand]}`;
-    
-    // document.getElementById(".style-").innerHTML = `${Reponses[numberRand]}`;
+    document.querySelector(".style-question").innerHTML = `${Questions[numberRand]}`;
+    document.getElementById(".style-question").innerHTML = `${Reponses[numberRand]}`;
    
 
   })

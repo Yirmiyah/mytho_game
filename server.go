@@ -110,7 +110,7 @@ func Room2(w http.ResponseWriter, r *http.Request) {
 	team1 = structure.Team1{
 		Name:   nameTeam1,
 		Avatar: "./data/" + choixAvatarTeam1 + ".png",
-		Score:  15,
+		Jeton:  15,
 	}
 
 	jsonData, err := json.Marshal(team1)
@@ -124,9 +124,7 @@ func Room2(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
 	t.ExecuteTemplate(w, "room2", nil)
-
 }
 
 func Manche(w http.ResponseWriter, r *http.Request) {
@@ -169,7 +167,6 @@ func Manche(w http.ResponseWriter, r *http.Request) {
 	database.PickQuestion()
 
 	t.ExecuteTemplate(w, "manche", nil)
-
 }
 
 func Game(w http.ResponseWriter, r *http.Request) {
