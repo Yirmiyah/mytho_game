@@ -61,16 +61,15 @@
     </a>
     <p id="timer" class="timer">60</p>
 
-    <h3>{{.Team1.Name}}</h3>
-    <h3>{{.Team2.Name}}</h3>
+    <a class="teamname1">{{.Team1.Name}}</a>
+    <a class="teamname2">{{.Team2.Name}}</a>
 
     <img src="{{.Team1.Avatar}}" class="avatar-team1" alt="">
-    <img src="{{.Team2.Avatar}}" class="avatar-team2" alt="">
+    <img src="{{.Team2.Avatar}}" class="avatar-team2" alt=""> 
 
     <div class="card-wrapper">
       <ul class="card-list">
         <li class="card-list__item" data-card="0">
-          <div class="cardfront"></div>
           <div class="card"></div>
         </li>
         <li class="card-list__item" data-card="1">
@@ -85,6 +84,7 @@
         <button class="button btn-reset">Equipe 2</button>
       </div>
     </div>
+
 
     <div class="card2-wrapper">
       <ul class="card2-list">

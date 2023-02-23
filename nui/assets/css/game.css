@@ -57,36 +57,33 @@ body {
     height: 20px;
     width: 20px;
     position: absolute;
-    border: 1px solid black;
+    border-radius: 50%;
+    border: 1.5px solid black;
     clear: both;
   }
   
   .rosefon {
+    height: 2.5%;
+    width: 1.3%;
     background-color: #c1338e;
     left: 170px;
     top : 97px;
   }
   
   .violet {
+    height: 2.5%;
+    width: 1.3%;
     background-color: #718bd1;
     left: 182px;
     top : 135px;
   }
 
   .roseclai {
+    height: 2.5%;
+    width: 1.3%;
     background-color: #e5accc;
     left: 185px;
     top : 176px;
-  }
-
-  .avatar-team1{
-    height: 10%;
-    width: 10%;
-  }
-
-  .avatar-team2{
-    height: 10%;
-    width: 10%;
   }
 
   .equipe1 {
@@ -94,7 +91,7 @@ body {
     width: 20%;
     position: absolute;
     left: -50px;
-    top : 225px;
+    top : 230px;
   }
 
   .equipe2 {
@@ -106,6 +103,7 @@ body {
   }
 
   .score1 {
+    font-weight: bold;
     height: 60%;
     width: 20%;
     position: absolute;
@@ -114,6 +112,7 @@ body {
   }
 
   .score2 {
+    font-weight: bold;
     height: 60%;
     width: 20%;
     position: absolute;
@@ -132,19 +131,23 @@ body {
   }
 
   .token1 {
-    height: 5%;
-    width: 2.5%;
+    border: 2.5px solid black;
+    border-radius: 50%;
+    height: 6%;
+    width: 3%;
     position: absolute;
-    left: 180px;
-    top : 699px;
+    left: 190px;
+    top : 692px;
   }
 
   .token2 {
-    height: 5%;
-    width: 2.5%;
+    border: 2.5px solid black;
+    border-radius: 50%;
+    height: 6%;
+    width: 3%;
     position: absolute;
-    left: 178px;
-    top : 389px;
+    left: 185px;
+    top : 382px;
   }
 
   .chrono {
@@ -180,25 +183,44 @@ body {
     top : 100px;
   }
 
+  .teamname1 {
+    font-size: 3em;
+    position: absolute;
+    left: 610px;
+    top : 250px;
+  }
+
+  .teamname2 {
+    font-size: 3em;
+    position: absolute;
+    left: 1400px;
+    top : 250px;
+  }
+
+  .avatar-team1{
+    border: 5px solid black;
+    border-radius: 50%;
+    position: absolute;
+    left: 330px;
+    top : 180px;
+    height: 21%;
+    width: 10%;
+  }
+
+  .avatar-team2{
+    border: 5px solid black;
+    border-radius: 50%;
+    position: absolute;
+    left: 1680px;
+    top : 180px;
+    height: 21%;
+    width: 10%;
+  }
+
   /* End of Minuteur */
   /* Flip card */
 
-  .cardfront {
-    position: absolute;
-    top: 150px;
-    left: -400px;
-    width: 250px;
-    height: 400px;
-    padding: 30px;
-    border-radius: 60px;
-    box-shadow: 0 1px 3px 0 #222;
-    background-image: url("../../data/frontcard.png");
-    background-size: 100% 100%;
-  }
-
-  .card.is-flipped {
-    transform: rotateY(180deg);
-  }
+  
 
   /* End flip card */
 
@@ -414,7 +436,7 @@ body {
     width: 250px;
     z-index: 1;
     position: absolute;
-    top: 440px;
+    top: 447px;
     left: 10px;
   }
 
@@ -423,7 +445,7 @@ body {
     width: 250px;
     z-index: 1;
     position: absolute;
-    top: 750px;
+    top: 757px;
     left: 10px;
   }
   
