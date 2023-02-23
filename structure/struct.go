@@ -3,7 +3,7 @@ package structure
 type Team1 struct {
 	Name   string
 	Avatar string
-	Score  int
+	Jeton  int
 }
 
 type Team2 struct {

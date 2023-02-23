@@ -28,10 +28,13 @@ function resetTimer() {
 /* End of timer*/
 /* flip card*/
 function fadeInImage() {
-  var image = document.getElementById("image");
+  let image = document.getElementById("image");
   image.style.opacity = 1;
-  var txt = document.getElementById("txt");
+  let txt = document.getElementById("txt");
+  let txt2 = document.getElementById("txt2");
+
   txt.style.opacity = 1;
+  txt2.style.opacity = 1;
 }
 /* End of flip card*/
 
@@ -45,7 +48,7 @@ const reset = document.getElementsByClassName("btn-reset")[0];
 
 const card2List = document.getElementsByClassName("card2-list")[0];
 
-// equipe 1 shuffle ane take card to wirte answer...
+// equipe 1 shuffle ane take card to write answer...
 
 reset.disabled = true;
 
@@ -81,9 +84,9 @@ function PickQRL(){
     let Level = data.Level
 
     numberRand = Math.floor(Math.random() * 93);
-    Questions[numberRand]
-    Reponses[numberRand]
-    Level[numberRand]
+    // Questions[numberRand]
+    // Reponses[numberRand]
+    // Level[numberRand]
 
     console.log("Questions: " + Questions[numberRand])
     console.log("Responses: " + Reponses[numberRand])
@@ -108,16 +111,17 @@ function PickQRL(){
     // const R = `${Reponses}`;
     // document.getElementById("Question").innerHTML = Q;
     // document.getElementById("Reponse").innerHTML = R;
-    document.querySelector(".front").innerHTML = `${Questions[numberRand]}`;
+    console.log("Questions: " + Questions[numberRand])
+    console.log("Reponses: " + Reponses[numberRand])
+    document.getElementById("txt").innerHTML = `${Questions[numberRand]}`;
+    document.getElementById("txt2").innerHTML = `${Reponses[numberRand]}`;
+
     
-    // document.getElementById(".style-").innerHTML = `${Reponses[numberRand]}`;
-   
 
   })
   .catch(error => {
     console.error('Une erreur est survenue', error);
   });
-
 }
 
 const StartTeam1 = document.getElementById("start-button")
@@ -130,23 +134,23 @@ StartTeam1.addEventListener("click", (e)=>{
 
 
 
-const form = document.querySelector('.avatar');
+// const form = document.querySelector('.avatar');
 
-form.addEventListener('submit', function(event) {
-  event.preventDefault();
+// form.addEventListener('submit', function(event) {
+//   event.preventDefault();
 
-  // Récupère la valeur de l'élément input radio sélectionné
-  const radios = document.getElementsByName('position');
-  let selectedValue;
-  for (const radio of radios) {
-    if (radio.checked) {
-      selectedValue = radio.value;
-      break;
-    }
-  }
+//   // Récupère la valeur de l'élément input radio sélectionné
+//   const radios = document.getElementsByName('position');
+//   let selectedValue;
+//   for (const radio of radios) {
+//     if (radio.checked) {
+//       selectedValue = radio.value;
+//       break;
+//     }
+//   }
 
-  console.log(selectedValue); // Affiche la valeur de l'élément sélectionné
-});
+//   console.log(selectedValue); // Affiche la valeur de l'élément sélectionné
+// });
 
 
 
