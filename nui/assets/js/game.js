@@ -30,6 +30,8 @@ function resetTimer() {
 function fadeInImage() {
   var image = document.getElementById("image");
   image.style.opacity = 1;
+  var txt = document.getElementById("txt");
+  txt.style.opacity = 1;
 }
 /* End of flip card*/
 
@@ -48,7 +50,6 @@ const card2List = document.getElementsByClassName("card2-list")[0];
 reset.disabled = true;
 
 shuffle.addEventListener("click", () => {
-  PickQRL();
   cardList.classList.add("is-animated");
   shuffle.disabled = true;
   reset.disabled = false;
