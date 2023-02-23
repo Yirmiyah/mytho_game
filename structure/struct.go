@@ -22,3 +22,7 @@ type FakeResponse struct {
 	Response1 string
 	Response2 string
 }
+
+type Manche struct {
+	Tour int
+}
