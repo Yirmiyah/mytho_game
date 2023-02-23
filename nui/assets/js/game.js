@@ -27,7 +27,10 @@ function resetTimer() {
 }
 /* End of timer*/
 /* flip card*/
-var card = document.querySelector('.card');
+function fadeInImage() {
+  var image = document.getElementById("image");
+  image.style.opacity = 1;
+}
 /* End of flip card*/
 
 
@@ -45,12 +48,13 @@ const card2List = document.getElementsByClassName("card2-list")[0];
 reset.disabled = true;
 
 shuffle.addEventListener("click", () => {
+  PickQRL();
   cardList.classList.add("is-animated");
   shuffle.disabled = true;
   reset.disabled = false;
   setTimeout(function () {
-    card.classList.toggle('is-flipped');
-  }, 4000);
+    fadeInImage();
+  }, 3000);
 });
 
 reset.addEventListener("click", () => {
@@ -84,6 +88,21 @@ function PickQRL(){
     console.log("Responses: " + Reponses[numberRand])
     console.log("Level: " + Level[numberRand])
 
+    const images = [
+      "../../data/frontcard.png",
+      "../../data/frontcard2.png",
+      "../../data/frontcard3.png",
+    ];
+    
+    if (Level[numberRand] == "Débutant") {
+      document.getElementById("image").src = images[0];
+    } else if (Level[numberRand] == "Intermédiaire") {
+      document.getElementById("image").src = images[1];
+    } else if (Level[numberRand] == "Expert") {
+      document.getElementById("image").src = images[2];
+    }
+
+
     const Q = `${Questions}`;
     const R = `${Reponses}`;
     document.getElementById("Question").innerHTML = Q;
@@ -95,7 +114,4 @@ function PickQRL(){
   });
 
 }
-
-
-
 

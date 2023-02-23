@@ -193,7 +193,7 @@ body {
   .teamname2 {
     font-size: 3em;
     position: absolute;
-    left: 1400px;
+    left: 1430px;
     top : 250px;
   }
 
@@ -220,8 +220,18 @@ body {
   /* End of Minuteur */
   /* Flip card */
 
-  
-
+  .frontcard {
+    z-index: 7;
+    position: absolute;
+    top: 366px;
+    left: 525px;
+    width: 320px;
+    height: 470px;
+    padding: 30px;
+    border-radius: 0px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }  
   /* End flip card */
 
 
