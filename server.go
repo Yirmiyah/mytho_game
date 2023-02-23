@@ -42,21 +42,17 @@ func main() {
 	//http.Handle("/nui/", http.StripPrefix("/nui/", http.FileServer(http.Dir("./nui"))))
 	http.Handle("/", fileServer)
 	http.HandleFunc("/error", erreur)
-<<<<<<< HEAD
 	//http.HandleFunc("/game", Game)
 	http.HandleFunc("/home", Home)
 	http.HandleFunc("/room1", Room1)
 	http.HandleFunc("/room2", Room2)
 	http.HandleFunc("/manches", Manche)
 
-=======
->>>>>>> max
 	fmt.Printf("Starting server at port:8080\n")
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal(err)
 	}
 }
-<<<<<<< HEAD
 
 func Home(w http.ResponseWriter, r *http.Request) {
 	if err := r.ParseForm(); err != nil {
@@ -190,5 +186,3 @@ func Game(w http.ResponseWriter, r *http.Request) {
 	t.ExecuteTemplate(w, "game", nil)
 
 }
-=======
->>>>>>> max
