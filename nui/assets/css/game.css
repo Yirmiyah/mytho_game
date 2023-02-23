@@ -79,6 +79,16 @@ body {
     top : 176px;
   }
 
+  .avatar-team1{
+    height: 10%;
+    width: 10%;
+  }
+
+  .avatar-team2{
+    height: 10%;
+    width: 10%;
+  }
+
   .equipe1 {
     height: 60%;
     width: 20%;

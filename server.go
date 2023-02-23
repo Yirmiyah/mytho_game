@@ -18,7 +18,7 @@ func erreur(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Handling 500 errors
-	_, err := template.ParseFiles("./nui/index.html")
+	_, err := template.ParseFiles("./nui/home.html")
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte("500: Internal Server Error"))
@@ -39,10 +39,10 @@ func main() {
 
 	fileServer := http.FileServer(http.Dir("./nui"))
 
-	//http.Handle("/nui/", http.StripPrefix("/nui/", http.FileServer(http.Dir("./nui"))))
+	// http.Handle("/nui/", http.StripPrefix("/nui/", fileServer))
 	http.Handle("/", fileServer)
 	http.HandleFunc("/error", erreur)
-	//http.HandleFunc("/game", Game)
+	http.HandleFunc("/game", Game)
 	http.HandleFunc("/home", Home)
 	http.HandleFunc("/room1", Room1)
 	http.HandleFunc("/room2", Room2)
@@ -54,13 +54,16 @@ func main() {
 	}
 }
 
+var team2 structure.Team2
+var team1 structure.Team1
+
 func Home(w http.ResponseWriter, r *http.Request) {
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
 
-	t, err := template.ParseFiles("nui/index.html", "nui/assets/css/theme.css")
+	t, err := template.ParseFiles("nui/home.html")
 	if err != nil {
 		log.Println("Error parsing template:", err)
 		return
@@ -91,8 +94,6 @@ func Room2(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var team1 structure.Team1
-
 	t, err := template.ParseFiles("nui/room2.html", "nui/assets/css/theme2.css")
 	if err != nil {
 		log.Println("Error parsing template:", err)
@@ -106,7 +107,7 @@ func Room2(w http.ResponseWriter, r *http.Request) {
 
 	team1 = structure.Team1{
 		Name:   nameTeam1,
-		Avatar: "./nui/data/" + choixAvatarTeam1,
+		Avatar: "./data/" + choixAvatarTeam1 + ".png",
 		Score:  15,
 	}
 
@@ -132,8 +133,6 @@ func Manche(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var team2 structure.Team2
-
 	t, err := template.ParseFiles("nui/manche.html", "nui/assets/css/theme2.css")
 	if err != nil {
 		log.Println("Error parsing template:", err)
@@ -142,14 +141,14 @@ func Manche(w http.ResponseWriter, r *http.Request) {
 
 	choixAvatarTeam2 := r.FormValue("position")
 
-	nameTeam2 := r.FormValue("name_team1")
+	nameTeam2 := r.FormValue("name_team2")
 
 	fmt.Printf("choixAvatarTeam2: %v\n", choixAvatarTeam2)
 	fmt.Printf("nameTeam1: %v\n", nameTeam2)
 
 	team2 = structure.Team2{
 		Name:   nameTeam2,
-		Avatar: "./nui/data/" + choixAvatarTeam2,
+		Avatar: "./data/" + choixAvatarTeam2 + ".png",
 		Jeton:  15,
 	}
 
@@ -172,17 +171,26 @@ func Manche(w http.ResponseWriter, r *http.Request) {
 }
 
 func Game(w http.ResponseWriter, r *http.Request) {
+
 	if err := r.ParseForm(); err != nil {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
 
-	t, err := template.ParseFiles("nui/manche.html", "nui/assets/css/theme2.css")
+	fmt.Printf("team1: %v\n", team1)
+	fmt.Printf("team2: %v\n", team2)
+
+	t, err := template.ParseFiles("nui/game.html", "nui/assets/css/game.css")
 	if err != nil {
 		log.Println("Error parsing template:", err)
 		return
 	}
 
-	t.ExecuteTemplate(w, "game", nil)
-
+	err = t.ExecuteTemplate(w, "game", map[string]any{
+		"Team1": team1,
+		"Team2": team2,
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 }

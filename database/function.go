@@ -61,7 +61,7 @@ func CreateJsonQuizz() {
 	}
 }
 
-func PickQuestion() {
+func PickQuestion() (string, string, string) {
 
 	rand.Seed(time.Now().UnixNano())
 	number := rand.Intn(93)
@@ -69,4 +69,10 @@ func PickQuestion() {
 	fmt.Printf("quizz.Question: %v\n", quizz.Question[number])
 	fmt.Printf("quizz.Response: %v\n", quizz.Response[number])
 	fmt.Printf("quizz.Level: %v\n", quizz.Level[number])
+
+	q := quizz.Question[number]
+	r := quizz.Response[number]
+	l := quizz.Level[number]
+
+	return q, r, l
 }

@@ -1,108 +1,145 @@
+{{define "game"}}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/game.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/game.css">
 
-    		<!-- Favicon (http://www.favicon-generator.org/) -->
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Favicon (http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-		<!-- Google Analytics -->
-		<!-- Add your Google Analytics code here. -->
+  <!-- Google Analytics -->
+  <!-- Add your Google Analytics code here. -->
 
-		<!-- Google fonts (https://www.google.com/fonts) -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Bellota" rel="stylesheet"> <!-- Body font -->
-		<link href="https://fonts.googleapis.com/css2?family=Bellota" rel="stylesheet"> <!-- Secondary/Alter font -->
+  <!-- Google fonts (https://www.google.com/fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bellota" rel="stylesheet"> <!-- Body font -->
+  <link href="https://fonts.googleapis.com/css2?family=Bellota" rel="stylesheet"> <!-- Secondary/Alter font -->
 
-		<!-- Libs and Plugins CSS -->
-		<link rel="stylesheet" href="assets/vendor/normalize/normalize.min.css"> <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
-		<link rel="stylesheet" href="assets/vendor/fontawesome/css/fontawesome-all.min.css"> <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
-		<link rel="stylesheet" href="assets/vendor/swiper/css/swiper-bundle.min.css"> <!-- Swiper CSS (https://swiperjs.com/) -->
-		<link rel="stylesheet" href="assets/vendor/lightgallery/css/lightgallery.min.css"> <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
+  <!-- Libs and Plugins CSS -->
+  <link rel="stylesheet" href="assets/vendor/normalize/normalize.min.css">
+  <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/fontawesome-all.min.css">
+  <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
+  <link rel="stylesheet" href="assets/vendor/swiper/css/swiper-bundle.min.css">
+  <!-- Swiper CSS (https://swiperjs.com/) -->
+  <link rel="stylesheet" href="assets/vendor/lightgallery/css/lightgallery.min.css">
+  <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
 
-    <title>Mytho - Game</title>
-    <style>
-      body {
-        overflow: hidden;
-      }
-    </style>
+  <title>Mytho - Game</title>
+  <style>
+    body {
+      overflow: hidden;
+    }
+  </style>
 </head>
+
 <body>
-<div class="global">
+  <div class="global">
 
-  <a href=""><img class="grilsit" src="./data/sitdown.png"></a>   
-  <a href=""><img class="chrono" src="./data/chrono.png"></a>   
+    <a href=""><img class="grilsit" src="./data/sitdown.png"></a>
+    <a href=""><img class="chrono" src="./data/chrono.png"></a>
 
-  <a>
-    <br>
-    <br>
-    <br>
-    &nbsp;Niveau de difficulté des questions : <br>
-    <br>
-    &nbsp;- Rose foncé: Expert <div class='box rosefon'></div><br>
-    <br>
-    &nbsp;- Violet: Intermédiaire <div class='box violet'></div><br>
-    <br>
-    &nbsp;- Rose clair: Débutant<br><div class='box roseclai'></div>
-    <br>
-  </a>
+    <a>
+      <br>
+      <br>
+      <br>
+      &nbsp;Niveau de difficulté des questions : <br>
+      <br>
+      &nbsp;- Rose foncé: Expert <div class='box rosefon'></div><br>
+      <br>
+      &nbsp;- Violet: Intermédiaire <div class='box violet'></div><br>
+      <br>
+      &nbsp;- Rose clair: Débutant<br>
+      <div class='box roseclai'></div>
+      <br>
+    </a>
+
+   
+      <h2>{{.Team1.Name}}</h2>
+   
+
+   
+      <h2>{{.Team2.Name}}</h2>
+   
+
+    
+      <img src="{{.Team1.Avatar}}" class="avatar-team1" alt="avatar-team1">
+  
+      <img src="{{.Team2.Avatar}}" class="avatar-team2" alt="avatar-team2">
+   
+
+    <div class="card-wrapper">
+      <ul class="card-list">
+        <li class="card-list__item" data-card="0">
+          <div class="card"></div>
+        </li>
+        <li class="card-list__item" data-card="1">
+          <div class="card"></div>
+        </li>
+        <li class="card-list__item" data-card="2">
+          <div class="card"></div>
+        </li>
+      </ul>
+      <div class="button-wrapper">
 
 
-<div class="card-wrapper">
-<ul class="card-list">
-  <li class="card-list__item" data-card="0">
-    <div class="card"></div>
-  </li>
-  <li class="card-list__item" data-card="1">
-    <div class="card"></div>
-  </li>
-  <li class="card-list__item" data-card="2">
-    <div class="card"></div>
-  </li>
-</ul>
-<div class="button-wrapper">
-  <button class="button btn-shuffle">Equipe 1</button>
-  <button class="button btn-reset">Equipe 2</button>
-</div>
-</div>
+        <button class="button btn-shuffle">Equipe 1</button>
+        <button class="button btn-reset">Equipe 2</button>
 
-<div class="card2-wrapper">
-  <ul class="card2-list">
-    <li class="card2-list__item" data-card2="0">
-      <div class="card2"></div>
-    </li>
-    <li class="card2-list__item" data-card2="1">
-      <div class="card2"></div>
-    </li>
-    <li class="card2-list__item" data-card2="2">
-      <div class="card2"></div>
-    </li>
-  </ul>
+      </div>
+    </div>
+
+    <div class="card2-wrapper">
+      <ul class="card2-list">
+        <li class="card2-list__item" data-card2="0">
+          <div class="card2"></div>
+        </li>
+        <li class="card2-list__item" data-card2="1">
+          <div class="card2"></div>
+        </li>
+        <li class="card2-list__item" data-card2="2">
+          <div class="card2"></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="line-corner-1"></div>
+    <div class="line-corner-2"></div>
+    <div class="line-corner-3"></div>
+
+    <div class="line-sep"></div>
+
+    <div class="vertical-line"></div>
+
+    <a class="score1">Score Equipe 1 : 15</a>
+    <a href=""><img class="token1" src="./data/coin.png"></a>
+    <br>
+    <a class="score2">Score Equipe 2 : 15</a>
+    <a href=""><img class="token2" src="./data/coin.png"></a>
+
   </div>
+  <script type="module">
+    import { shuffle } from "./assets/js/game.js"
 
+    shuffle()
 
+    fetch('quizz.json')
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+      })
+      .catch(error => {
+        console.error('Une erreur est survenue', error);
+      });
 
-  <div class="line-corner-1"></div>
-  <div class="line-corner-2"></div>
-  <div class="line-corner-3"></div>
-
-  <div class="line-sep"></div>
-
-  <div class="vertical-line"></div>
-
-  <a class="score1">Score Equipe 1 : 15</a>
-  <a href=""><img class="token1" src="./data/coin.png"></a>  
-  <br>
-  <a class="score2">Score Equipe 2 : 15</a>
-  <a href=""><img class="token2" src="./data/coin.png"></a>  
-
-</div>
-    <script src="./assets/js/game.js"></script>
+  </script>
 </body>
+
 </html>
+{{end}}
