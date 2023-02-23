@@ -107,6 +107,9 @@ function PickQRL(){
     const R = `${Reponses}`;
     document.getElementById("Question").innerHTML = Q;
     document.getElementById("Reponse").innerHTML = R;
+    document.querySelector(".style-question").innerHTML = `${Questions[numberRand]}`;
+    // document.getElementById(".style-").innerHTML = `${Reponses[numberRand]}`;
+   
 
   })
   .catch(error => {
@@ -114,4 +117,35 @@ function PickQRL(){
   });
 
 }
+
+const StartTeam1 = document.getElementById("start-button")
+
+StartTeam1.addEventListener("click", (e)=>{
+    if(e){
+     PickQRL()
+    }
+})
+
+
+
+const form = document.querySelector('.avatar');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Récupère la valeur de l'élément input radio sélectionné
+  const radios = document.getElementsByName('position');
+  let selectedValue;
+  for (const radio of radios) {
+    if (radio.checked) {
+      selectedValue = radio.value;
+      break;
+    }
+  }
+
+  console.log(selectedValue); // Affiche la valeur de l'élément sélectionné
+});
+
+
+
 

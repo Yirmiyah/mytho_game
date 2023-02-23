@@ -8,6 +8,7 @@ import (
 	"mytho_game/database"
 	"mytho_game/structure"
 	"net/http"
+	"strconv"
 	"text/template"
 )
 
@@ -56,6 +57,7 @@ func main() {
 
 var team2 structure.Team2
 var team1 structure.Team1
+var manche structure.Manche
 
 func Home(w http.ResponseWriter, r *http.Request) {
 	if err := r.ParseForm(); err != nil {
@@ -180,6 +182,8 @@ func Game(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("team1: %v\n", team1)
 	fmt.Printf("team2: %v\n", team2)
 
+	manche.Tour, _ = strconv.Atoi(r.FormValue("position"))
+
 	t, err := template.ParseFiles("nui/game.html", "nui/assets/css/game.css")
 	if err != nil {
 		log.Println("Error parsing template:", err)
@@ -187,8 +191,9 @@ func Game(w http.ResponseWriter, r *http.Request) {
 	}
 
 	err = t.ExecuteTemplate(w, "game", map[string]any{
-		"Team1": team1,
-		"Team2": team2,
+		"Team1":  team1,
+		"Team2":  team2,
+		"Manche": manche.Tour,
 	})
 	if err != nil {
 		log.Fatal(err)
