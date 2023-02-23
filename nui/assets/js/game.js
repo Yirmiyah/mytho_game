@@ -108,6 +108,7 @@ function PickQRL(){
     // document.getElementById("Question").innerHTML = Q;
     // document.getElementById("Reponse").innerHTML = R;
     document.querySelector(".front").innerHTML = `${Questions[numberRand]}`;
+    
     // document.getElementById(".style-").innerHTML = `${Reponses[numberRand]}`;
    
 
