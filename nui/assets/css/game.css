@@ -150,7 +150,7 @@ body {
   .chrono {
     z-index: 0;
     position: absolute;
-    left: 900px;
+    left: 909px;
     top : 5px;
     height: 40%;
     width: 17%;
@@ -159,11 +159,49 @@ body {
   .grilsit {
     z-index: 1;
     position: absolute;
-    left: 780px;
+    left: 786px;
     top : -57px;
     height: 40%;
     width: 17%;
   }
+
+  /* Minuteur */
+  .timer {
+    font-size: 4em;
+    position: absolute;
+    left: 1055px;
+    top : 90px;
+  }
+
+  .btnteste {
+    z-index: 1;
+    position: absolute;
+    left: 1065px;
+    top : 100px;
+  }
+
+  /* End of Minuteur */
+  /* Flip card */
+
+  .cardfront {
+    position: absolute;
+    top: 150px;
+    left: -400px;
+    width: 250px;
+    height: 400px;
+    padding: 30px;
+    border-radius: 60px;
+    box-shadow: 0 1px 3px 0 #222;
+    background-image: url("../../data/frontcard.png");
+    background-size: 100% 100%;
+  }
+
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  }
+
+  /* End flip card */
+
 
 
   /*Card game*/
