@@ -153,9 +153,6 @@ birdSound.play();
 });
 
 reset.addEventListener("click", () => {
-<<<<<<< HEAD
-  fadeOutImage();
-=======
 
   var click = new Audio("../../data/lick.wav");
   click.loop = false;
@@ -179,7 +176,6 @@ birdSound.addEventListener("ended", function() {
 birdSound.play();
   
   fadeOutImage(); 
->>>>>>> bc1fd5071f68020f5f7e1fa79058448577b4d698
   resetTimer();
   cardList.classList.remove("is-animated");
   card2List.classList.add("is-animated");
@@ -296,13 +292,10 @@ const StartTeam1 = document.getElementById("start-button")
 StartTeam1.addEventListener("click", (e) => {
   if (e) {
     PickQRL();
-<<<<<<< HEAD
-=======
     // setTimeout(function () {
     //   fl.play();
     // }, 1000);
     //fl.volume = 0.12;
->>>>>>> bc1fd5071f68020f5f7e1fa79058448577b4d698
   }
 })
 
