@@ -34,7 +34,7 @@ startbutton3.addEventListener("click", function () {
   tx.style.opacity = 0;
   var txt3 = document.getElementById("txt3");
   txt3.style.opacity = 0;
-  
+
 
   btn.disabled = true;
   btn2.disabled = false;
@@ -132,7 +132,7 @@ function fadeInImage() {
   txt2.style.opacity = 1;
   bluff.style.opacity = 1;
   bluff1.style.opacity = 1;
-} 
+}
 // let field2 = document.querySelector(".field2")
 // field2.style.opacity = 1;
 
@@ -232,31 +232,61 @@ reset.addEventListener("click", () => {
 
 
 
-  // let Btnmiser = document.querySelector(".button btn-rep")
+const Btnmiser = document.getElementById("start-button3")
 
-  // Btnmiser.addEventListener("click", (e) => {
-  //   const Bluff1Equipe1 = document.getElementById("bluff1")
-  //   const Bluff2Equipe1 = document.getElementById("bluff2")
+Btnmiser.addEventListener("click", (e) => {
 
-  //   if (e) {
-  //     let valueBluff1Equipe1 = Bluff1Equipe1.value
-  //     let valueBluff2Equipe1 = Bluff2Equipe1.value
-  //     let response1 = document.createElement("p")
-  //     let response2 = document.createElement("p")
-  //     let response3 = document.createElement("p")
+  if (e) {
 
-  //     response1.innerHTML = valueBluff1Equipe1
-  //     response2.innerHTML = valueBluff2Equipe1
-  //     response3.innerHTML = goodAnswerTeam1
+    let Bluff1Equipe2 = document.getElementById("bluff3")
+    let Bluff2Equipe2 = document.getElementById("bluff4")
 
-  //     let divField = document.querySelector(".field")
+    let valueBluff1Equipe2 = Bluff1Equipe2.value
+    let valueBluff2Equipe2 = Bluff2Equipe2.value
+    let response1 = document.createElement("p")
+    let response2 = document.createElement("p")
+    let response3 = document.createElement("p")
+    response1.style.zIndex = 9
+    response2.style.zIndex = 9
+    response3.style.zIndex = 9
 
-  //     divField.appendChild(response1)
-  //     divField.appendChild(response2)
-  //     divField.appendChild(response3)
-  //   }
-  // })
-  
+    response1.style.opacity = 0
+    response2.style.opacity = 0
+    response3.style.opacity = 0
+    response1.style.opacity = 0
+    response2.style.opacity = 0
+    response3.style.opacity = 0
+
+    response1.style.transition= "opacity 1s ease-in-out";
+    response2.style.transition= "opacity 1s ease-in-out";
+    response3.style.transition= "opacity 1s ease-in-out";
+
+    response1.innerHTML = valueBluff1Equipe2
+    response2.innerHTML = valueBluff2Equipe2
+    response3.innerHTML = goodAnswerTeam2
+
+    let divField = document.querySelector(".field")
+    let divFr = document.querySelector(".fr")
+
+    divField.appendChild(response1)
+    divField.appendChild(response2)
+    divField.appendChild(response3)
+    let image = document.getElementById("image");
+
+
+    setTimeout(function () {
+      image.style.opacity = 1;
+      divField.style.opacity = 1;
+      divFr.style.opacity = 1;
+      response1.style.opacity = 1
+      response2.style.opacity = 1
+      response3.style.opacity = 1
+    }, 3000);
+
+    
+  }
+})
+
 
 
 
