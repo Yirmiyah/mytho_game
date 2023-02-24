@@ -42,8 +42,8 @@
 <body>
   <div class="global">
 
-    <a ><img class="grilsit" src="./data/sitdown.png"></a>
-    <a ><img class="chrono" src="./data/chrono.png"></a>
+    <a><img class="grilsit" src="./data/sitdown.png"></a>
+    <a><img class="chrono" src="./data/chrono.png"></a>
 
     <a>
       <br>
@@ -94,12 +94,26 @@
       <img class="frontcard" id="image">
       <p class="front" id="txt"></p>
 
-   <div class="fi">
-    <img class="ficard" id="img">
-    <p class="fit" id="tx"></p>
+      <div class="field">
+        <input type="text" id="bluff1" placeholder="Votre Bluff">
+        <p id="txt2"></p>
+        <input type="text" id="bluff2" placeholder="Votre Bluff">
+      </div>
     </div>
 
-    
+    <div class="fi">
+      <img class="ficard" id="img">
+
+      <p class="fit" id="tx"></p>
+
+      <div class="field2">
+        <input type="text" id="bluff3" placeholder="Votre Bluff">
+        <p id="txt3"></p>
+        <input type="text" id="bluff4" placeholder="Votre Bluff">
+      </div>
+    </div>
+
+
     <div class="card2-wrapper">
       <ul class="card2-list">
         <li class="card2-list__item" data-card2="0">
@@ -125,10 +139,10 @@
     <div class="vertical-line"></div>
 
     <a class="score1">Score Equipe 1 : {{.Team1.Jeton}}</a>
-    <a ><img class="token1" src="./data/coin.png"></a>
+    <a><img class="token1" src="./data/coin.png"></a>
     <br>
     <a class="score2">Score Equipe 2 : {{.Team2.Jeton}}</a>
-    <a ><img class="token2" src="./data/coin.png"></a>
+    <a><img class="token2" src="./data/coin.png"></a>
   </div>
 
   <script src="/assets/js/game.js"></script>
