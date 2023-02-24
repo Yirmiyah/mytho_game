@@ -11,8 +11,8 @@ music.volume = 0.12;
 /*timer*/
 const startButton = document.getElementById("start-button");
 const timerDisplay = document.getElementById("timer");
-let fakeAns1 = document.getElementById("bluff1")
-let fakeAns2 = document.getElementById("bluff2")
+let fakeAns1 = document.getElementById("bluff1");
+let fakeAns2 = document.getElementById("bluff2");
 
 const startbutton3 = document.getElementById("start-button3");
 const startbutton4 = document.getElementById("start-button4");
@@ -61,7 +61,7 @@ startButton.addEventListener("click", function () {
 
   var click = new Audio("../../data/lick.wav");
   click.loop = false;
-  click.volume = 0.15
+  click.volume = 0.15;
   click.play();
 
   
