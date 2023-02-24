@@ -104,10 +104,6 @@ function fadeOutImage() {
   bluff1.style.opacity = 0;
   var bluff2 = document.getElementById("bluff2");
   bluff2.style.opacity = 0;
-  var bluff3 = document.getElementById("bluff3");
-  bluff3.style.opacity = 1;
-  var bluff4 = document.getElementById("bluff4");
-  bluff4.style.opacity = 1;
 
 
 }
