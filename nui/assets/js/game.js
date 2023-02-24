@@ -55,9 +55,6 @@ startButton.addEventListener("click", function () {
     if (count === 0) {
       clearInterval(countdown);
       resetTimer();
-      
-
-
     }
   }, 1000);
 });
@@ -77,20 +74,42 @@ function fadeInImage() {
   let div = document.querySelector(".fr")
   let field = document.querySelector(".field")
   let bluff = document.querySelector(".bluff")
+  var bluff1 = document.getElementById("bluff1");
+  bluff1.style.opacity = 1;
+  var bluff2 = document.getElementById("bluff2");
+  bluff2.style.opacity = 1;
+
+
+
 
   image.style.opacity = 1;
   div.style.opacity = 1;
   field.style.opacity = 1;
+
   txt.style.opacity = 1;
   txt2.style.opacity = 1;
   bluff.style.opacity = 1;
-}
+  bluff1.style.opacity = 1;
+}let field2 = document.querySelector(".field2")
+  field2.style.opacity = 1;
 
 function fadeOutImage() {
   var image = document.getElementById("image");
   image.style.opacity = 0;
   var txt = document.getElementById("txt");
   txt.style.opacity = 0;
+  var txt2 = document.getElementById("txt2");
+  txt2.style.opacity = 0;
+  var bluff1 = document.getElementById("bluff1");
+  bluff1.style.opacity = 0;
+  var bluff2 = document.getElementById("bluff2");
+  bluff2.style.opacity = 0;
+  var bluff3 = document.getElementById("bluff3");
+  bluff3.style.opacity = 1;
+  var bluff4 = document.getElementById("bluff4");
+  bluff4.style.opacity = 1;
+
+
 }
 
 /* End of flip card*/
@@ -163,7 +182,7 @@ birdSound.play();
 
   reset.disabled = true;
   shuffle.disabled = false;
-  
+
 });
 
 /*Randomiser les Questions/Réponses */
@@ -210,7 +229,7 @@ function PickQRL() {
       console.log("Questions: " + Questions[numberRand])
       console.log("Reponses: " + Reponses[numberRand])
       document.querySelector(".front").innerHTML = `${Questions[numberRand]}`;
-      document.querySelector(".good-rep").innerHTML = `${Reponses[numberRand]}`;
+      document.getElementById("txt2").innerHTML = `${Reponses[numberRand]}`;
 
 
 
@@ -220,53 +239,52 @@ function PickQRL() {
     });
 }
 
-function PickQRL2(){
+function PickQRL2() {
 
   fetch('quizz.json')
-  .then(response => response.json())
-  .then(data => {
-    // console.log(data);
-    let Questions = data.Question
-    let Reponses = data.Response
-    let Level = data.Level
+    .then(response => response.json())
+    .then(data => {
+      // console.log(data);
+      let Questions = data.Question
+      let Reponses = data.Response
+      let Level = data.Level
 
-    numberRand = Math.floor(Math.random() * 93);
-    Questions[numberRand]
-    Reponses[numberRand]
-    Level[numberRand]
+      numberRand = Math.floor(Math.random() * 93);
+      Questions[numberRand]
+      Reponses[numberRand]
+      Level[numberRand]
 
-    console.log("Questions: " + Questions[numberRand])
-    console.log("Responses: " + Reponses[numberRand])
-    console.log("Level: " + Level[numberRand])
+      console.log("Questions: " + Questions[numberRand])
+      console.log("Responses: " + Reponses[numberRand])
+      console.log("Level: " + Level[numberRand])
 
-    const images = [
-      "../../data/frontcard.png",
-      "../../data/frontcard2.png",
-      "../../data/frontcard3.png",
-    ];
+      const images = [
+        "../../data/frontcard.png",
+        "../../data/frontcard2.png",
+        "../../data/frontcard3.png",
+      ];
 
-    if (Level[numberRand] == "Débutant") {
-      document.getElementById("img").src = images[0];
-    } else if (Level[numberRand] == "Intermédiaire") {
-      document.getElementById("img").src = images[1];
-    } else if (Level[numberRand] == "Expert") {
-      document.getElementById("img").src = images[2];
-    }
-    // const Q = `${Questions}`;
-    // const R = `${Reponses}`;
-    // document.getElementById("Question").innerHTML = Q;
-    // document.getElementById("Reponse").innerHTML = R;
-    document.querySelector(".fit").innerHTML = `${Questions[numberRand]}`;
-    
-    // document.getElementById(".style-").innerHTML = `${Reponses[numberRand]}`;
-  })
-  .catch(error => {
-    console.error('Une erreur est survenue', error);
-  });
+      if (Level[numberRand] == "Débutant") {
+        document.getElementById("img").src = images[0];
+      } else if (Level[numberRand] == "Intermédiaire") {
+        document.getElementById("img").src = images[1];
+      } else if (Level[numberRand] == "Expert") {
+        document.getElementById("img").src = images[2];
+      }
+      // const Q = `${Questions}`;
+      // const R = `${Reponses}`;
+      // document.getElementById("Question").innerHTML = Q;
+      // document.getElementById("Reponse").innerHTML = R;
+      document.querySelector(".fit").innerHTML = `${Questions[numberRand]}`;
+      document.getElementById("txt3").innerHTML = `${Reponses[numberRand]}`;
+
+      // document.getElementById(".style-").innerHTML = `${Reponses[numberRand]}`;
+    })
+    .catch(error => {
+      console.error('Une erreur est survenue', error);
+    });
 
 }
-
-
 
 
 const StartTeam1 = document.getElementById("start-button")
@@ -282,16 +300,24 @@ StartTeam1.addEventListener("click", (e) => {
 })
 
 const StartTeam2 = document.getElementById("start-button2")
-StartTeam2.addEventListener("click", (e)=>{
-    if(e){
+StartTeam2.addEventListener("click", (e) => {
+  if (e) {
     PickQRL2();
-     setTimeout(function () {
+    setTimeout(function () {
       var img = document.getElementById("img");
       img.style.opacity = 1;
       var tx = document.getElementById("tx");
       tx.style.opacity = 1;
+      var txt3 = document.getElementById("txt3");
+      txt3.style.opacity = 1;
+      var bluff3 = document.getElementById("bluff3");
+      bluff3.style.opacity = 1;
+      var bluff4 = document.getElementById("bluff4");
+      bluff4.style.opacity = 1;
+      let field2 = document.querySelector(".field2");
+      field2.style.opacity = 1;
     }, 3000);
-    }
+  }
 })
 
 
