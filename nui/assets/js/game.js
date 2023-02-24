@@ -17,6 +17,45 @@ const timerDisplay = document.getElementById("timer");
 let fakeAns1 = document.getElementById("bluff1");
 let fakeAns2 = document.getElementById("bluff2");
 
+const startbutton3 = document.getElementById("start-button3");
+const startbutton4 = document.getElementById("start-button4");
+
+startbutton3.addEventListener("click", function () {
+
+  var img = document.getElementById("img");
+  img.style.opacity = 0;
+  var txt = document.getElementById("txt");
+  txt.style.opacity = 0;
+  var bluff3 = document.getElementById("bluff3");
+  bluff3.style.opacity = 0;
+  var bluff4 = document.getElementById("bluff4");
+  bluff4.style.opacity = 0;
+  var tx = document.getElementById("tx");
+  tx.style.opacity = 0;
+  var txt3 = document.getElementById("txt3");
+  txt3.style.opacity = 0;
+  
+
+  btn.disabled = true;
+  btn2.disabled = false;
+
+  var click = new Audio("../../data/lick.wav");
+  click.loop = false;
+  click.volume = 0.15;
+  click.play();
+
+  cardList.classList.add("is-animated");
+
+
+});
+
+startbutton4.addEventListener("click", function () {
+  var click = new Audio("../../data/lick.wav");
+  click.loop = false;
+  click.volume = 0.15;
+  click.play();
+});
+
 
 
 let count = 60;
@@ -108,8 +147,6 @@ function fadeOutImage() {
   bluff1.style.opacity = 0;
   var bluff2 = document.getElementById("bluff2");
   bluff2.style.opacity = 0;
-
-
 }
 
 /* End of flip card*/
@@ -122,9 +159,14 @@ const shuffle = document.getElementsByClassName("btn-shuffle")[0];
 const reset = document.getElementsByClassName("btn-reset")[0];
 const card2List = document.getElementsByClassName("card2-list")[0];
 
+const btn = document.getElementsByClassName("btn-rep")[0];
+const btn2 = document.getElementsByClassName("btn-rep2")[0];
+
 // equipe 1 shuffle ane take card to write answer...
 
 reset.disabled = true;
+btn.disabled = true;
+btn2.disabled = true;
 
 shuffle.addEventListener("click", () => {
 
@@ -333,6 +375,8 @@ StartTeam1.addEventListener("click", (e) => {
 const StartTeam2 = document.getElementById("start-button2")
 StartTeam2.addEventListener("click", (e) => {
   if (e) {
+    shuffle.disabled = true;
+    btn.disabled = false;
     PickQRL2();
     setTimeout(function () {
       var img = document.getElementById("img");
