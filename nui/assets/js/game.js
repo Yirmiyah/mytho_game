@@ -1,3 +1,13 @@
+/* Sound */
+
+var music = document.getElementById("music");
+music.play();
+music.volume = 0.12;
+
+
+
+/* End of Sound */
+
 /*timer*/
 const startButton = document.getElementById("start-button");
 const timerDisplay = document.getElementById("timer");
@@ -9,7 +19,32 @@ let fakeAns2 = document.getElementById("bluff2")
 let count = 60;
 
 startButton.addEventListener("click", function () {
+
+  var click = new Audio("../../data/lick.wav");
+  click.loop = false;
+  click.volume = 0.15
+  click.play();
+
+  
   const countdown = setInterval(function () {
+
+    var birdSound = new Audio("../../data/tik.wav");
+    birdSound.loop = false;
+    birdSound.volume = 0.15;
+    var playCount = 0;
+  
+    birdSound.addEventListener("ended", function() {
+    playCount++;
+    if (playCount < 2) {
+      setTimeout(function() {
+        birdSound.play();
+      }, 30000);
+    }
+  });
+  
+  birdSound.play();
+
+
     count--;
     timerDisplay.innerHTML = count < 10 ? "0" + count.toString() : count;
 
@@ -73,6 +108,23 @@ const card2List = document.getElementsByClassName("card2-list")[0];
 reset.disabled = true;
 
 shuffle.addEventListener("click", () => {
+
+  var birdSound = new Audio("../../data/flip1.mp3");
+  birdSound.loop = false;
+  birdSound.volume = 0.4;
+  var playCount = 0;
+
+birdSound.addEventListener("ended", function() {
+  playCount++;
+  if (playCount < 3) {
+    setTimeout(function() {
+      birdSound.play();
+    }, 420);
+  }
+});
+
+birdSound.play();
+
   cardList.classList.add("is-animated");
   shuffle.disabled = true;
   reset.disabled = false;
@@ -82,6 +134,28 @@ shuffle.addEventListener("click", () => {
 });
 
 reset.addEventListener("click", () => {
+
+  var click = new Audio("../../data/lick.wav");
+  click.loop = false;
+  click.volume = 0.15
+  click.play();
+
+  var birdSound = new Audio("../../data/flip1.mp3");
+  birdSound.loop = false;
+  birdSound.volume = 0.4;
+  var playCount = 0;
+
+birdSound.addEventListener("ended", function() {
+  playCount++;
+  if (playCount < 3) {
+    setTimeout(function() {
+      birdSound.play();
+    }, 420);
+  }
+});
+
+birdSound.play();
+  
   fadeOutImage(); 
   resetTimer();
   cardList.classList.remove("is-animated");
@@ -199,7 +273,11 @@ const StartTeam1 = document.getElementById("start-button")
 
 StartTeam1.addEventListener("click", (e) => {
   if (e) {
-    PickQRL()
+    PickQRL();
+    // setTimeout(function () {
+    //   fl.play();
+    // }, 1000);
+    //fl.volume = 0.12;
   }
 })
 
