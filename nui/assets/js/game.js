@@ -20,9 +20,6 @@ startButton.addEventListener("click", function () {
     if (count === 0) {
       clearInterval(countdown);
       resetTimer();
-
-
-
     }
   }, 1000);
 });
@@ -58,7 +55,8 @@ function fadeInImage() {
   txt2.style.opacity = 1;
   bluff.style.opacity = 1;
   bluff1.style.opacity = 1;
-}
+}let field2 = document.querySelector(".field2")
+  field2.style.opacity = 1;
 
 function fadeOutImage() {
   var image = document.getElementById("image");
@@ -215,8 +213,6 @@ function PickQRL2() {
 }
 
 
-
-
 const StartTeam1 = document.getElementById("start-button")
 
 StartTeam1.addEventListener("click", (e) => {
@@ -234,13 +230,13 @@ StartTeam2.addEventListener("click", (e) => {
       img.style.opacity = 1;
       var tx = document.getElementById("tx");
       tx.style.opacity = 1;
-      var txt3 = document.getElementById("txt3")
+      var txt3 = document.getElementById("txt3");
       txt3.style.opacity = 1;
       var bluff3 = document.getElementById("bluff3");
       bluff3.style.opacity = 1;
       var bluff4 = document.getElementById("bluff4");
       bluff4.style.opacity = 1;
-      let field2 = document.querySelector(".field2")
+      let field2 = document.querySelector(".field2");
       field2.style.opacity = 1;
     }, 3000);
   }
