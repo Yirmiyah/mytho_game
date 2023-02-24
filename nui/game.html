@@ -42,8 +42,8 @@
 <body>
   <div class="global">
 
-    <a href=""><img class="grilsit" src="./data/sitdown.png"></a>
-    <a href=""><img class="chrono" src="./data/chrono.png"></a>
+    <a ><img class="grilsit" src="./data/sitdown.png"></a>
+    <a ><img class="chrono" src="./data/chrono.png"></a>
 
     <a>
       <br>
@@ -67,13 +67,12 @@
     <a class="teamname2">{{.Team2.Name}}</a>
 
     <img src="{{.Team1.Avatar}}" class="avatar-team1" alt="">
-    <img src="{{.Team2.Avatar}}" class="avatar-team2" alt=""> 
+    <img src="{{.Team2.Avatar}}" class="avatar-team2" alt="">
 
     <div class="card-wrapper">
       <ul class="card-list">
         <li class="card-list__item" data-card="0">
           <div class="card">
-
           </div>
         </li>
         <li class="card-list__item" data-card="1">
@@ -92,16 +91,15 @@
     </div>
 
     <div class="fr">
-   <img class="frontcard" id="image">
-   <p class="front" id="txt"></p>
-   </div>
+      <img class="frontcard" id="image">
+      <p class="front" id="txt"></p>
 
    <div class="fi">
     <img class="ficard" id="img">
     <p class="fit" id="tx"></p>
     </div>
 
-
+    
     <div class="card2-wrapper">
       <ul class="card2-list">
         <li class="card2-list__item" data-card2="0">
@@ -126,13 +124,11 @@
 
     <div class="vertical-line"></div>
 
-    <a class="score1">Score Equipe 1 : 15</a>
-    <a href=""><img class="token1" src="./data/coin.png"></a>
+    <a class="score1">Score Equipe 1 : {{.Team1.Jeton}}</a>
+    <a ><img class="token1" src="./data/coin.png"></a>
     <br>
-    <a class="score2">Score Equipe 2 : 15</a>
-    <a href=""><img class="token2" src="./data/coin.png"></a>
-  </div>
-
+    <a class="score2">Score Equipe 2 : {{.Team2.Jeton}}</a>
+    <a ><img class="token2" src="./data/coin.png"></a>
   </div>
 
   <script src="/assets/js/game.js"></script>

@@ -1,6 +1,10 @@
 /*timer*/
 const startButton = document.getElementById("start-button");
 const timerDisplay = document.getElementById("timer");
+let fakeAns1 = document.getElementById("bluff1")
+let fakeAns2 = document.getElementById("bluff2")
+
+
 
 let count = 60;
 
@@ -16,6 +20,9 @@ startButton.addEventListener("click", function () {
     if (count === 0) {
       clearInterval(countdown);
       resetTimer();
+      
+
+
     }
   }, 1000);
 });
@@ -29,10 +36,19 @@ function resetTimer() {
 /* End of timer*/
 /* flip card*/
 function fadeInImage() {
-  var image = document.getElementById("image");
+  let image = document.getElementById("image");
+  let txt = document.getElementById("txt");
+  let txt2 = document.getElementById("txt2");
+  let div = document.querySelector(".fr")
+  let field = document.querySelector(".field")
+  let bluff = document.querySelector(".bluff")
+
   image.style.opacity = 1;
-  var txt = document.getElementById("txt");
+  div.style.opacity = 1;
+  field.style.opacity = 1;
   txt.style.opacity = 1;
+  txt2.style.opacity = 1;
+  bluff.style.opacity = 1;
 }
 
 function fadeOutImage() {
@@ -50,10 +66,9 @@ function fadeOutImage() {
 const cardList = document.getElementsByClassName("card-list")[0];
 const shuffle = document.getElementsByClassName("btn-shuffle")[0];
 const reset = document.getElementsByClassName("btn-reset")[0];
-
 const card2List = document.getElementsByClassName("card2-list")[0];
 
-// equipe 1 shuffle ane take card to wirte answer...
+// equipe 1 shuffle ane take card to write answer...
 
 reset.disabled = true;
 
@@ -80,55 +95,55 @@ reset.addEventListener("click", () => {
 /*Randomiser les Questions/Réponses */
 
 
-function PickQRL(){
+function PickQRL() {
 
   fetch('quizz.json')
-  .then(response => response.json())
-  .then(data => {
-    // console.log(data);
-    let Questions = data.Question
-    let Reponses = data.Response
-    let Level = data.Level
+    .then(response => response.json())
+    .then(data => {
+      // console.log(data);
+      let Questions = data.Question
+      let Reponses = data.Response
+      let Level = data.Level
 
-    numberRand = Math.floor(Math.random() * 93);
-    Questions[numberRand]
-    Reponses[numberRand]
-    Level[numberRand]
+      numberRand = Math.floor(Math.random() * 93);
+      // Questions[numberRand]
+      // Reponses[numberRand]
+      // Level[numberRand]
 
-    console.log("Questions: " + Questions[numberRand])
-    console.log("Responses: " + Reponses[numberRand])
-    console.log("Level: " + Level[numberRand])
+      console.log("Questions: " + Questions[numberRand])
+      console.log("Responses: " + Reponses[numberRand])
+      console.log("Level: " + Level[numberRand])
 
-    const images = [
-      "../../data/frontcard.png",
-      "../../data/frontcard2.png",
-      "../../data/frontcard3.png",
-    ];
+      const images = [
+        "../../data/frontcard.png",
+        "../../data/frontcard2.png",
+        "../../data/frontcard3.png",
+      ];
 
-    if (Level[numberRand] == "Débutant") {
-      document.getElementById("image").src = images[0];
-    } else if (Level[numberRand] == "Intermédiaire") {
-      document.getElementById("image").src = images[1];
-    } else if (Level[numberRand] == "Expert") {
-      document.getElementById("image").src = images[2];
-    }
+      if (Level[numberRand] == "Débutant") {
+        document.getElementById("image").src = images[0];
+      } else if (Level[numberRand] == "Intermédiaire") {
+        document.getElementById("image").src = images[1];
+      } else if (Level[numberRand] == "Expert") {
+        document.getElementById("image").src = images[2];
+      }
+
+
+      // const Q = `${Questions}`;
+      // const R = `${Reponses}`;
+      // document.getElementById("Question").innerHTML = Q;
+      // document.getElementById("Reponse").innerHTML = R;
+      console.log("Questions: " + Questions[numberRand])
+      console.log("Reponses: " + Reponses[numberRand])
+      document.querySelector(".front").innerHTML = `${Questions[numberRand]}`;
+      document.querySelector(".good-rep").innerHTML = `${Reponses[numberRand]}`;
 
 
 
-    // const Q = `${Questions}`;
-    // const R = `${Reponses}`;
-    // document.getElementById("Question").innerHTML = Q;
-    // document.getElementById("Reponse").innerHTML = R;
-    document.querySelector(".front").innerHTML = `${Questions[numberRand]}`;
-    
-    // document.getElementById(".style-").innerHTML = `${Reponses[numberRand]}`;
-   
-
-  })
-  .catch(error => {
-    console.error('Une erreur est survenue', error);
-  });
-
+    })
+    .catch(error => {
+      console.error('Une erreur est survenue', error);
+    });
 }
 
 function PickQRL2(){
@@ -182,10 +197,10 @@ function PickQRL2(){
 
 const StartTeam1 = document.getElementById("start-button")
 
-StartTeam1.addEventListener("click", (e)=>{
-    if(e){
-     PickQRL()
-    }
+StartTeam1.addEventListener("click", (e) => {
+  if (e) {
+    PickQRL()
+  }
 })
 
 const StartTeam2 = document.getElementById("start-button2")
@@ -203,23 +218,23 @@ StartTeam2.addEventListener("click", (e)=>{
 
 
 
-const form = document.querySelector('.avatar');
+// const form = document.querySelector('.avatar');
 
-form.addEventListener('submit', function(event) {
-  event.preventDefault();
+// form.addEventListener('submit', function(event) {
+//   event.preventDefault();
 
-  // Récupère la valeur de l'élément input radio sélectionné
-  const radios = document.getElementsByName('position');
-  let selectedValue;
-  for (const radio of radios) {
-    if (radio.checked) {
-      selectedValue = radio.value;
-      break;
-    }
-  }
+//   // Récupère la valeur de l'élément input radio sélectionné
+//   const radios = document.getElementsByName('position');
+//   let selectedValue;
+//   for (const radio of radios) {
+//     if (radio.checked) {
+//       selectedValue = radio.value;
+//       break;
+//     }
+//   }
 
-  console.log(selectedValue); // Affiche la valeur de l'élément sélectionné
-});
+//   console.log(selectedValue); // Affiche la valeur de l'élément sélectionné
+// });
 
 
 

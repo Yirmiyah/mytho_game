@@ -110,7 +110,7 @@ func Room2(w http.ResponseWriter, r *http.Request) {
 	team1 = structure.Team1{
 		Name:   nameTeam1,
 		Avatar: "./data/" + choixAvatarTeam1 + ".png",
-		Score:  15,
+		Jeton:  15,
 	}
 
 	jsonData, err := json.Marshal(team1)
