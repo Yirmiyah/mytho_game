@@ -575,7 +575,26 @@ body {
     top: 757px;
     left: 10px;
   }
+
+  .btn-rep {
+    height: 60px;
+    width: 250px;
+    z-index: 1;
+    position: absolute;
+    top: 515px;
+    left: 10px;
+  }
   
+  .btn-rep2 {
+    height: 60px;
+    width: 250px;
+    z-index: 1;
+    position: absolute;
+    top: 825px;
+    left: 10px;
+  }
+
+
   .button:disabled {
     background: #777;
     cursor: not-allowed;
