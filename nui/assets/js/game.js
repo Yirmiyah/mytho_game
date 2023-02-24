@@ -1,3 +1,8 @@
+const cardList = document.getElementsByClassName("card-list")[0];
+const shuffle = document.getElementsByClassName("btn-shuffle")[0];
+const reset = document.getElementsByClassName("btn-reset")[0];
+const card2List = document.getElementsByClassName("card2-list")[0];
+
 /* Sound */
 
 var music = document.getElementById("music");
@@ -18,6 +23,9 @@ const startbutton3 = document.getElementById("start-button3");
 const startbutton4 = document.getElementById("start-button4");
 
 startbutton3.addEventListener("click", function () {
+
+  resetTimer();
+
 
   var img = document.getElementById("img");
   img.style.opacity = 0;
@@ -42,15 +50,18 @@ startbutton3.addEventListener("click", function () {
   click.play();
 
   cardList.classList.add("is-animated");
-
-
 });
 
 startbutton4.addEventListener("click", function () {
+
+
   var click = new Audio("../../data/lick.wav");
   click.loop = false;
   click.volume = 0.15;
   click.play();
+
+  btn2.disabled = true;
+
 });
 
 
@@ -150,11 +161,6 @@ function fadeOutImage() {
 
 /* Shuffle card*/
 
-const cardList = document.getElementsByClassName("card-list")[0];
-const shuffle = document.getElementsByClassName("btn-shuffle")[0];
-const reset = document.getElementsByClassName("btn-reset")[0];
-const card2List = document.getElementsByClassName("card2-list")[0];
-
 const btn = document.getElementsByClassName("btn-rep")[0];
 const btn2 = document.getElementsByClassName("btn-rep2")[0];
 
@@ -181,7 +187,6 @@ birdSound.addEventListener("ended", function() {
 });
 
 birdSound.play();
-
   cardList.classList.add("is-animated");
   shuffle.disabled = true;
   reset.disabled = false;
@@ -361,6 +366,13 @@ StartTeam2.addEventListener("click", (e) => {
 })
 
 
+const lol2 = document.getElementById("start-button4")
+lol2.addEventListener("click", (e) => {
+  if (e) {
+    cardList.classList.remove("is-animated");
+    card2List.classList.add("is-animated");
+  }
+});
 
 // const form = document.querySelector('.avatar');
 
