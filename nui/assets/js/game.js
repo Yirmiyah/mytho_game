@@ -1,3 +1,6 @@
+let goodAnswerTeam1
+let goodAnswerTeam2
+
 /* Sound */
 
 var music = document.getElementById("music");
@@ -25,24 +28,24 @@ startButton.addEventListener("click", function () {
   click.volume = 0.15;
   click.play();
 
-  
+
   const countdown = setInterval(function () {
 
     var birdSound = new Audio("../../data/tik.wav");
     birdSound.loop = false;
     birdSound.volume = 0.15;
     var playCount = 0;
-  
-    birdSound.addEventListener("ended", function() {
-    playCount++;
-    if (playCount < 2) {
-      setTimeout(function() {
-        birdSound.play();
-      }, 30000);
-    }
-  });
-  
-  birdSound.play();
+
+    birdSound.addEventListener("ended", function () {
+      playCount++;
+      if (playCount < 2) {
+        setTimeout(function () {
+          birdSound.play();
+        }, 30000);
+      }
+    });
+
+    birdSound.play();
 
 
     count--;
@@ -90,8 +93,9 @@ function fadeInImage() {
   txt2.style.opacity = 1;
   bluff.style.opacity = 1;
   bluff1.style.opacity = 1;
-}let field2 = document.querySelector(".field2")
-  field2.style.opacity = 1;
+} 
+// let field2 = document.querySelector(".field2")
+// field2.style.opacity = 1;
 
 function fadeOutImage() {
   var image = document.getElementById("image");
@@ -129,16 +133,16 @@ shuffle.addEventListener("click", () => {
   birdSound.volume = 0.4;
   var playCount = 0;
 
-birdSound.addEventListener("ended", function() {
-  playCount++;
-  if (playCount < 3) {
-    setTimeout(function() {
-      birdSound.play();
-    }, 420);
-  }
-});
+  birdSound.addEventListener("ended", function () {
+    playCount++;
+    if (playCount < 3) {
+      setTimeout(function () {
+        birdSound.play();
+      }, 420);
+    }
+  });
 
-birdSound.play();
+  birdSound.play();
 
   cardList.classList.add("is-animated");
   shuffle.disabled = true;
@@ -160,18 +164,18 @@ reset.addEventListener("click", () => {
   birdSound.volume = 0.4;
   var playCount = 0;
 
-birdSound.addEventListener("ended", function() {
-  playCount++;
-  if (playCount < 3) {
-    setTimeout(function() {
-      birdSound.play();
-    }, 420);
-  }
-});
+  birdSound.addEventListener("ended", function () {
+    playCount++;
+    if (playCount < 3) {
+      setTimeout(function () {
+        birdSound.play();
+      }, 420);
+    }
+  });
 
-birdSound.play();
-  
-  fadeOutImage(); 
+  birdSound.play();
+
+  fadeOutImage();
   resetTimer();
   cardList.classList.remove("is-animated");
   card2List.classList.add("is-animated");
@@ -181,8 +185,41 @@ birdSound.play();
 
 });
 
-/*Randomiser les Questions/Réponses */
+/***Mise Equipe 1 ***/
 
+
+
+
+  // let Btnmiser = document.querySelector(".button btn-rep")
+
+  // Btnmiser.addEventListener("click", (e) => {
+  //   const Bluff1Equipe1 = document.getElementById("bluff1")
+  //   const Bluff2Equipe1 = document.getElementById("bluff2")
+
+  //   if (e) {
+  //     let valueBluff1Equipe1 = Bluff1Equipe1.value
+  //     let valueBluff2Equipe1 = Bluff2Equipe1.value
+  //     let response1 = document.createElement("p")
+  //     let response2 = document.createElement("p")
+  //     let response3 = document.createElement("p")
+
+  //     response1.innerHTML = valueBluff1Equipe1
+  //     response2.innerHTML = valueBluff2Equipe1
+  //     response3.innerHTML = goodAnswerTeam1
+
+  //     let divField = document.querySelector(".field")
+
+  //     divField.appendChild(response1)
+  //     divField.appendChild(response2)
+  //     divField.appendChild(response3)
+  //   }
+  // })
+  
+
+
+
+
+/*Randomiser les Questions/Réponses */
 
 function PickQRL() {
 
@@ -224,6 +261,7 @@ function PickQRL() {
       // document.getElementById("Reponse").innerHTML = R;
       console.log("Questions: " + Questions[numberRand])
       console.log("Reponses: " + Reponses[numberRand])
+      goodAnswerTeam1 = Reponses[numberRand]
       document.querySelector(".front").innerHTML = `${Questions[numberRand]}`;
       document.getElementById("txt2").innerHTML = `${Reponses[numberRand]}`;
 
@@ -267,10 +305,7 @@ function PickQRL2() {
       } else if (Level[numberRand] == "Expert") {
         document.getElementById("img").src = images[2];
       }
-      // const Q = `${Questions}`;
-      // const R = `${Reponses}`;
-      // document.getElementById("Question").innerHTML = Q;
-      // document.getElementById("Reponse").innerHTML = R;
+      goodAnswerTeam2 = Reponses[numberRand]
       document.querySelector(".fit").innerHTML = `${Questions[numberRand]}`;
       document.getElementById("txt3").innerHTML = `${Reponses[numberRand]}`;
 
