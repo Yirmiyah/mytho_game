@@ -220,6 +220,22 @@ body {
   /* End of Minuteur */
   /* Flip card */
 
+  .fr{
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* position: absolute; */
+    /* top: 366px;
+    left: 525px;
+    width: 320px;
+    height: 470px;
+    padding: 30px;
+    border-radius: 0px; */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
   .frontcard {
     z-index: 7;
     position: absolute;
@@ -231,8 +247,31 @@ body {
     border-radius: 0px;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-  }  
+  }
 
+ 
+
+  .field{
+    z-index: 8;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 540px;
+    left: 592px;
+    width: 250px;
+    height: 401px;
+    margin: 0;
+    /* padding: 11px; */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  #txt2{
+    z-index: 8;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
   .front {
     z-index: 7;
     position: absolute;
