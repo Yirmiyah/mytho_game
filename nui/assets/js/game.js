@@ -35,7 +35,6 @@ startbutton3.addEventListener("click", function () {
   var txt3 = document.getElementById("txt3");
   txt3.style.opacity = 0;
 
-
   btn.disabled = true;
   btn2.disabled = false;
 
@@ -113,16 +112,13 @@ function fadeInImage() {
   let image = document.getElementById("image");
   let txt = document.getElementById("txt");
   let txt2 = document.getElementById("txt2");
-  let div = document.querySelector(".fr")
+  let div = document.querySelector(".fr");
   let field = document.querySelector(".field")
   let bluff = document.querySelector(".bluff")
   var bluff1 = document.getElementById("bluff1");
   bluff1.style.opacity = 1;
   var bluff2 = document.getElementById("bluff2");
   bluff2.style.opacity = 1;
-
-
-
 
   image.style.opacity = 1;
   div.style.opacity = 1;
@@ -158,7 +154,6 @@ const cardList = document.getElementsByClassName("card-list")[0];
 const shuffle = document.getElementsByClassName("btn-shuffle")[0];
 const reset = document.getElementsByClassName("btn-reset")[0];
 const card2List = document.getElementsByClassName("card2-list")[0];
-
 const btn = document.getElementsByClassName("btn-rep")[0];
 const btn2 = document.getElementsByClassName("btn-rep2")[0];
 
@@ -229,9 +224,6 @@ reset.addEventListener("click", () => {
 
 /***Mise Equipe 1 ***/
 
-
-
-
 const Btnmiser = document.getElementById("start-button3")
 
 Btnmiser.addEventListener("click", (e) => {
@@ -243,19 +235,21 @@ Btnmiser.addEventListener("click", (e) => {
 
     let valueBluff1Equipe2 = Bluff1Equipe2.value
     let valueBluff2Equipe2 = Bluff2Equipe2.value
-    let response1 = document.createElement("p")
-    let response2 = document.createElement("p")
-    let response3 = document.createElement("p")
-    response1.style.zIndex = 9
-    response2.style.zIndex = 9
-    response3.style.zIndex = 9
+    let response1 = document.createElement("p");
+    let response2 = document.createElement("p");
+    let response3 = document.createElement("p");
 
-    response1.style.opacity = 0
-    response2.style.opacity = 0
-    response3.style.opacity = 0
-    response1.style.opacity = 0
-    response2.style.opacity = 0
-    response3.style.opacity = 0
+    let checkBox1 = document.createElement("input").type("checkbox")
+    let checkBox2 = document.createElement("input").type("checkbox")
+    let checkBox3 = document.createElement("input").type("checkbox")
+
+    response1.style.zIndex = 9;
+    response2.style.zIndex = 9;
+    response3.style.zIndex = 9;
+
+    response1.style.opacity = 0;
+    response2.style.opacity = 0;
+    response3.style.opacity = 0;
 
     response1.style.transition= "opacity 1s ease-in-out";
     response2.style.transition= "opacity 1s ease-in-out";
@@ -267,10 +261,12 @@ Btnmiser.addEventListener("click", (e) => {
 
     let divField = document.querySelector(".field")
     let divFr = document.querySelector(".fr")
-
-    divField.appendChild(response1)
-    divField.appendChild(response2)
-    divField.appendChild(response3)
+    divField.appendChild(response1);
+    divField.appendChild(response2);
+    divField.appendChild(response3);
+    response1.appendChild(checkBox1)
+    response2.appendChild(checkBox2)
+    response3.appendChild(checkBox3)
     let image = document.getElementById("image");
 
 
@@ -278,17 +274,61 @@ Btnmiser.addEventListener("click", (e) => {
       image.style.opacity = 1;
       divField.style.opacity = 1;
       divFr.style.opacity = 1;
+      response1.style.opacity = 1;
+      response2.style.opacity = 1;
+      response3.style.opacity = 1;
+    }, 3000);
+  }
+})
+
+const Btnmiser2 = document.getElementById("start-button4");
+
+Btnmiser2.addEventListener("click", (e) =>{
+    if(e){
+
+    let Bluff1Equipe1 = document.getElementById("bluff1")
+    let Bluff2Equipe1 = document.getElementById("bluff2")
+
+    let valueBluff1Equipe2 = Bluff1Equipe1.value
+    let valueBluff2Equipe2 = Bluff2Equipe1.value
+    let response1 = document.createElement("p")
+    let response2 = document.createElement("p")
+    let response3 = document.createElement("p")
+    response1.style.zIndex = 9;
+    response2.style.zIndex = 9;
+    response3.style.zIndex = 9;
+
+    response1.style.opacity = 0;
+    response2.style.opacity = 0;
+    response3.style.opacity = 0;
+
+    response1.style.transition= "opacity 1s ease-in-out";
+    response2.style.transition= "opacity 1s ease-in-out";
+    response3.style.transition= "opacity 1s ease-in-out";
+
+    response1.innerHTML = valueBluff1Equipe2;
+    response2.innerHTML = valueBluff2Equipe2;
+    response3.innerHTML = goodAnswerTeam2;
+
+    let divField2 = document.querySelector(".field2")
+    let divFi = document.querySelector(".fi")
+
+    divField.appendChild(response1);
+    divField.appendChild(response2);
+    divField.appendChild(response3);
+    let image = document.getElementById("image");
+
+
+    setTimeout(function () {
+      image.style.opacity = 1;
+      divField2.style.opacity = 1;
+      divFi.style.opacity = 1;
       response1.style.opacity = 1
       response2.style.opacity = 1
       response3.style.opacity = 1
     }, 3000);
-
-    
-  }
+    }
 })
-
-
-
 
 
 /*Randomiser les Questions/Réponses */
@@ -331,13 +371,12 @@ function PickQRL() {
       // const R = `${Reponses}`;
       // document.getElementById("Question").innerHTML = Q;
       // document.getElementById("Reponse").innerHTML = R;
+
       console.log("Questions: " + Questions[numberRand])
       console.log("Reponses: " + Reponses[numberRand])
       goodAnswerTeam1 = Reponses[numberRand]
       document.querySelector(".front").innerHTML = `${Questions[numberRand]}`;
       document.getElementById("txt2").innerHTML = `${Reponses[numberRand]}`;
-
-
 
     })
     .catch(error => {
@@ -386,7 +425,6 @@ function PickQRL2() {
     .catch(error => {
       console.error('Une erreur est survenue', error);
     });
-
 }
 
 
