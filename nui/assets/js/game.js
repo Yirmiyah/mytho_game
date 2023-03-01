@@ -250,13 +250,32 @@ Btnmiser.addEventListener("click", (e) => {
     let response1 = document.createElement("p")
     let response2 = document.createElement("p")
     let response3 = document.createElement("p")
+
+    response1.style.opacity = 1
+    response2.style.opacity = 1
+    response3.style.opacity = 1
+
+
+    /* CSS */
+    response1.style.position = "absolute"
+    response2.style.position = "absolute"
+    response3.style.position = "absolute"
+
+    response1.style.top = "-20%"
+    response1.style.left = "40%"
+
+    response2.style.top = "15%"
+    response2.style.left = "40%"
+
+    response3.style.top = "55%"
+    response3.style.left = "40%"
+
+    /* End of CSS */
+
     response1.style.zIndex = 9
     response2.style.zIndex = 9
     response3.style.zIndex = 9
 
-    response1.style.opacity = 0
-    response2.style.opacity = 0
-    response3.style.opacity = 0
     response1.style.opacity = 0
     response2.style.opacity = 0
     response3.style.opacity = 0
@@ -286,7 +305,6 @@ Btnmiser.addEventListener("click", (e) => {
       response2.style.opacity = 1
       response3.style.opacity = 1
     }, 3000);
-
     
   }
 })
